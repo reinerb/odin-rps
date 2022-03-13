@@ -28,8 +28,17 @@ function playRound(playerChoice, computerChoice) {
   }
 }
 
-const playerChoice = "rock";
-
-for (let i = 0; i < 5; i++) {
-  console.log(playRound(playerChoice, computerPlay()));
+// Plays a full game of RPS with the given number of rounds
+function game(rounds) {
+  let choice;
+  for (let i = 0; i < rounds; i++) {
+    choice = prompt("Choose rock, paper, or scissors");
+    if (choice === null) {
+      break;
+    }
+    console.log(playRound(choice, computerPlay()));
+  }
 }
+
+// Starts a game with 5 rounds
+game(5);
